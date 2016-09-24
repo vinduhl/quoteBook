@@ -9,6 +9,10 @@ app.service("dataService", function() {
    { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
  ];
 
+ this.setQuotes = function(quotesArr) {
+    quotes = quotesArr;
+ }
+
  this.getQuotes = function() {
    return quotes;
  }
@@ -27,4 +31,9 @@ app.service("dataService", function() {
      }
    }
  }
+
+ this.persistData = function(callback) {
+   callback(quotes);
+ }
+
 });
